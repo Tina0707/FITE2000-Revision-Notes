@@ -11,8 +11,9 @@ public class BankAccount { ... }
 public class Savings extends BankAccount { ... }
 ```
 
-### What subclass can do:
-- Inherit all non-private fields and methods
+### What subclass gets/ can do:
+- **Inherit all fields and methods**（包括 `private`——在子类对象内存中存在，**但子类代码不能直接访问** `private` 成员）
+- **Directly access** only `public`, `protected`, and `default` (same package) members of superclass
 - Add its own fields and methods
 - **Override** inherited methods
 - Give inherited fields any value
@@ -103,8 +104,10 @@ class Savings extends BankAccount {
 | `protected` | ✅ | ✅ | ✅ | ❌ |
 | `public` | ✅ | ✅ | ✅ | ✅ |
 
-- Subclass **cannot** access `private` members of superclass
-- Subclass **can** access `protected` and `public` members
+- Subclass **cannot access** private members of superclass（但它们在子类对象中确实存在）
+- Subclass **can access** `protected` and `public` members
+
+> ⚠️ **继承 vs 访问的区别：** `private` 成员仍然被**继承**（子类对象的内存里有它），只是子类代码**不能直接写**。可以通过父类的 `public`/`protected` 方法来间接使用它。
 
 ## 7. Inheritance Design Steps
 
