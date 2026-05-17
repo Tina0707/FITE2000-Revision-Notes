@@ -22,18 +22,48 @@
 
 - **Simple**: Similar to C/C++, removed pointers/struct
 - **Object-oriented**: Everything is an object
-- **Platform independent**: `javac` → bytecode → JVM runs anywhere
+- **Platform independent**: 一次编写，到处运行 (Write Once, Run Anywhere)
+
+### 实现平台无关的核心流程
+
+```
+MyApp.java  ──javac编译──▶  MyApp.class  ──java运行──▶  程序输出
+  (源代码)         ↓       (字节码)          ↓
+                 人类可读                 JVM 逐行翻译
+                                      成当前系统的
+                                      机器码去执行
+```
+
+**三个角色的分工：**
+
+| 角色 | 全称 | 做什么 | 类比（翻译） |
+|---|---|---|---|
+| **`javac`** | Java 编译器 | 把 `.java` 源代码**编译**成 `.class` 字节码 | 把中文书翻译成**国际音标** |
+| **Bytecode** | 字节码 (`.class` 文件) | 一种**中间语言**，与操作系统无关 | 国际音标——不管在哪国，音标写法都一样 |
+| **JVM** | Java 虚拟机 | 把字节码**解释/编译**成当前系统的机器码去执行 | 不同国家的人看国际音标，用自己的母语发音读出来 |
+
+**为什么能做到平台无关？**
+- `javac` 编译出来的 `.class` 文件（字节码）**在任何平台上都是同一份** —— Windows、macOS、Linux 上编译结果一样
+- 每个平台有**对应版本的 JVM** —— Windows 版 JVM 把字节码翻译成 Windows 认识的机器码，macOS 版翻译成 macOS 认识的
+- 程序员只写一份代码，剩下的交给 **"javac 统一编译 → 不同平台 JVM 各自翻译"** 这条流水线
 
 > ⚠️ **PPT 标注 "We will talk about later" 的概念：**
 > - `static` 关键字 → **详见 Lecture 2 第 5 节**
 > - 对象引用 (object references) → **详见 Lecture 2 第 2 节**
 > - 数组 (arrays) → **详见 Lecture 2 第 6 节**
 
-### Compilation & Execution
+### 编译与执行（三步骤）
 ```bash
-javac MyFile.java    # → MyFile.class (bytecode)
-java MyFile          # JVM loads class, runs main() (no .class suffix!)
+# 第 1 步：编译（javac）
+javac MyFile.java
+#     ↓ 生成 MyFile.class（字节码 bytecode）
+
+# 第 2 步：运行（java）
+java MyFile
+#     ↓ JVM 将字节码翻译为当前系统的机器码并执行
 ```
+
+> **注意：** `java MyFile` 不加 `.class` 后缀，也不加路径 `java ./MyFile`
 
 ### Program Structure
 ```java
