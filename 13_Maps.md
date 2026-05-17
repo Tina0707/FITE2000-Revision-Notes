@@ -1,4 +1,4 @@
-# Lecture 12: Maps
+# Lecture 13: Maps
 
 ## 1. What is a Map?
 

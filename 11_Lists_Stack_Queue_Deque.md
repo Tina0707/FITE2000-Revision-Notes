@@ -1,4 +1,4 @@
-# Lecture 10: Lists, Stack, Queue & Deque
+# Lecture 11: Lists, Stack, Queue & Deque
 
 ## 1. ArrayList
 

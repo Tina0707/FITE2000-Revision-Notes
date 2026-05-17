@@ -1,4 +1,4 @@
-# Lecture 8: ArrayList, Sorting & Iterator
+# Lecture 9: ArrayList, Sorting & Iterator
 
 ## 1. Recap: ArrayList
 
@@ -134,7 +134,7 @@ while (it.hasNext()) {
 | `Stack` | LIFO | ✅ Yes | ❌ No | Top only |
 
 > ⚠️ **PPT 标注后续课程会详细讲解各集合类型：**
-> - `LinkedList`、`Stack`、`Queue`、`Deque` → **详见 Lecture 10**
-> - `HashSet`、`TreeSet` → **详见 Lecture 11**
-> - `HashMap`、`TreeMap` → **详见 Lecture 12**
-> - 各操作的 Big-O 性能分析 → **详见 Lecture 9**
+> - `LinkedList`、`Stack`、`Queue`、`Deque` → **详见 Lecture 11**
+> - `HashSet`、`TreeSet` → **详见 Lecture 12**
+> - `HashMap`、`TreeMap` → **详见 Lecture 13**
+> - 各操作的 Big-O 性能分析 → **详见 Lecture 10**

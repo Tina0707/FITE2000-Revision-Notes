@@ -1,4 +1,4 @@
-# Lecture 7: Exception Handling
+# Lecture 8: Exception Handling
 
 ## 1. Exception Types
 

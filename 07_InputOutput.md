@@ -1,4 +1,4 @@
-# Lecture 6: Input/Output
+# Lecture 7: Input/Output
 
 ## 1. Object Serialization
 

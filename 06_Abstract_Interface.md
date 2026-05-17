@@ -1,4 +1,4 @@
-# Lecture 5: Abstract Classes & Interfaces
+# Lecture 6: Abstract Classes & Interfaces
 
 ## 1. Why Abstract?
 
@@ -101,7 +101,7 @@ public interface Pet {
 public class Dog extends Canine implements Pet, Serializable { ... }
 ```
 
-> ⚠️ **PPT 标注 "We will talk about serialization later"：** `Serializable` 是标记接口（无方法需要实现），用于对象序列化 — **详见 Lecture 6（I/O）第 3 节**
+> ⚠️ **PPT 标注 "We will talk about serialization later"：** `Serializable` 是标记接口（无方法需要实现），用于对象序列化 — **详见 Lecture 7（I/O）第 3 节**
 
 ### Interface as Polymorphic Type
 ```java
