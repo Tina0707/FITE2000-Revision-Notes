@@ -133,7 +133,45 @@ public class Dog extends PetShop { ... }  // ❓ 这样可以吗？
 
 ---
 
-### Q8 (Slide 33): 为什么编译错误？
+### Q8 (Slide 24): 代码错误——文字说 Dog，代码却用 Wolf
+
+**问题：** 幻灯片 24 的代码有误，不符合文字说明。
+
+文字说：
+> "the **Dog** class has 3 methods… Which version of these methods will get called when they are called on a **Dog** reference?"
+
+**但代码创建的是 `Wolf` 对象，不是 `Dog`：**
+```java
+Wolf w = new Wolf();   // ❌ 文字说 Dog，但这里用了 Wolf
+w.roam();
+w.eat();
+w.sleep();
+```
+
+**修正：** 根据文字说明，应改为 `Dog`：
+
+```java
+Dog d = new Dog();
+d.roam();     // → 调用 Canine 的 roam()（Dog 没重写）
+d.eat();      // → 调用 Animal 的 eat()（Dog 没重写）
+d.sleep();    // → 调用 Dog 的 sleep()（Dog 重写了）
+```
+
+**为什么这样匹配？** 从讲义中的继承树可知：
+```
+Animal (eat, sleep)
+  └── Canine (roam)
+        └── Dog (sleep 被重写)
+```
+- `d.eat()` → Dog 没重写，向上找 → Canine 没有 → Animal 有，用 Animal 的
+- `d.roam()` → Dog 没重写，向上找 → Canine 有，用 Canine 的
+- `d.sleep()` → Dog 重写了，直接用 Dog 自己的
+
+**规则（Slide 25）：** 最具体的版本胜出——从当前类开始找，找不到就往上爬，找到第一个匹配就停。
+
+---
+
+### Q9 (Slide 33): 为什么编译错误？
 
 ```java
 public class BankAccount {
@@ -153,7 +191,7 @@ public class Savings extends BankAccount {
 
 ## Lecture 4: Polymorphism
 
-### Q9 (Slide 30): 向上转型后能调用子类独有的方法吗？
+### Q10 (Slide 30): 向上转型后能调用子类独有的方法吗？
 
 ```java
 Doctor s = new Surgeon();
@@ -166,7 +204,7 @@ s.MakeIncision();  // ❓ 编译通过吗？
 
 ---
 
-### Q10 (Slide 32): Object 引用能调用子类方法吗？
+### Q11 (Slide 32): Object 引用能调用子类方法吗？
 
 ```java
 Object myDog = new Dog();
@@ -178,7 +216,7 @@ myDog.makeNoise();  // ❓ 编译通过吗？
 
 ---
 
-### Q11 (Slide 33): ArrayList\<Object\> 取出来的是什么类型？
+### Q12 (Slide 33): ArrayList\<Object\> 取出来的是什么类型？
 
 ```java
 ArrayList<Object> list = new ArrayList<>();
@@ -196,7 +234,7 @@ Dog d = (Dog) list.get(0);  // ✅ 显式转型
 
 ## Lecture 6: Interface
 
-### Q12 (Slide 4): 实例化一个 Animal 对象有意义吗？
+### Q13 (Slide 4): 实例化一个 Animal 对象有意义吗？
 
 ```java
 Animal a = new Animal();  // ❓ 这样做好吗？
@@ -206,7 +244,7 @@ Animal a = new Animal();  // ❓ 这样做好吗？
 
 ---
 
-### Q13 (Slide 24): 两个接口有相同 default 方法会怎样？
+### Q14 (Slide 24): 两个接口有相同 default 方法会怎样？
 
 ```java
 interface A { default void hello() { ... } }
@@ -229,7 +267,7 @@ class MyClass implements A, B {
 
 ## Lecture 11: Lists
 
-### Q14 (Slide 31): 括号匹配问题
+### Q15 (Slide 31): 括号匹配问题
 
 **题目：** 判断字符数组中的括号是否匹配。匹配规则：每个左括号必须有同类型的右括号按正确顺序闭合。
 
@@ -255,7 +293,7 @@ public boolean isBalanced(char[] brackets) {
 
 ---
 
-### Q15 (Slide 37): 服务队列模拟
+### Q16 (Slide 37): 服务队列模拟
 
 **题目：** 模拟一个服务队列——客户从队尾加入，从队头被服务。
 
@@ -278,7 +316,7 @@ while (!queue.isEmpty()) {
 
 ---
 
-### Q16 (Slide 41): 回文判断
+### Q17 (Slide 41): 回文判断
 
 **题目：** 判断字符数组是否回文（正着读反着读一样）。
 
@@ -308,7 +346,7 @@ public boolean isPalindrome(char[] chars) {
 
 ## Lecture 12: Sets
 
-### Q17 (Slide 12): 能在基于节点的结构上进行二分查找吗？
+### Q18 (Slide 12): 能在基于节点的结构上进行二分查找吗？
 
 **答案：** **可以，但前提是节点结构是有序的二叉树（BST）。**  
 这正是 `TreeSet` 的原理——它基于**自平衡二叉搜索树**，搜索时从根节点开始，每次比较后进入左子树或右子树，每步排除一半元素，时间复杂度 **O(log n)**。  
@@ -318,7 +356,7 @@ public boolean isPalindrome(char[] chars) {
 
 ## Lecture 13: Maps
 
-### Q18 (Slide 20): 统计句子中每个单词出现的频率
+### Q19 (Slide 20): 统计句子中每个单词出现的频率
 
 **题目：** 写一个程序统计句子中每个单词出现的次数，然后按频率降序输出。
 
