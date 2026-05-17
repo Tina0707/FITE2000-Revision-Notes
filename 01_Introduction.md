@@ -24,6 +24,11 @@
 - **Object-oriented**: Everything is an object
 - **Platform independent**: `javac` → bytecode → JVM runs anywhere
 
+> ⚠️ **PPT 标注 "We will talk about later" 的概念：**
+> - `static` 关键字 → **详见 Lecture 2 第 5 节**
+> - 对象引用 (object references) → **详见 Lecture 2 第 2 节**
+> - 数组 (arrays) → **详见 Lecture 2 第 6 节**
+
 ### Compilation & Execution
 ```bash
 javac MyFile.java    # → MyFile.class (bytecode)
@@ -38,6 +43,8 @@ public class ClassName {           // file name must match class name
     }
 }
 ```
+
+> **🔗 详见 Lecture 2:** `static` 关键字（第 5 节）— 静态变量/方法属于类而非实例；`String[] args` 数组（第 6 节）— 命令行参数；对象引用（第 2 节）— 引用变量是对象的"遥控器"
 
 ## 4. Variables
 

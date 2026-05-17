@@ -67,6 +67,8 @@ When creating subclass object:
 2. Walks up hierarchy to `Object` class
 3. Superclass parts constructed **first**, then subclass
 
+> ⚠️ **PPT 标注 "We will talk about Object later"：** `Object` 类是所有类的终极父类，其关键方法（`toString()`, `equals()`, `hashCode()`, `getClass()`）— **详见 Lecture 4（多态）第 3 节**
+
 ### Rules:
 ```java
 public Savings(double balance, double rate) {

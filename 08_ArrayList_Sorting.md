@@ -132,3 +132,9 @@ while (it.hasNext()) {
 | `TreeMap` | Sorted by key | Keys: ❌ | ✅ Yes | By key |
 | `Queue` | FIFO | ✅ Yes | ❌ No | Front/back |
 | `Stack` | LIFO | ✅ Yes | ❌ No | Top only |
+
+> ⚠️ **PPT 标注后续课程会详细讲解各集合类型：**
+> - `LinkedList`、`Stack`、`Queue`、`Deque` → **详见 Lecture 10**
+> - `HashSet`、`TreeSet` → **详见 Lecture 11**
+> - `HashMap`、`TreeMap` → **详见 Lecture 12**
+> - 各操作的 Big-O 性能分析 → **详见 Lecture 9**

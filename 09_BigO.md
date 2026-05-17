@@ -94,3 +94,8 @@ void bubbleSort(int[] arr) {
 
 When n is **large enough**, constants don't matter — focus on **growth rate**.
 All basic operations can be treated as taking equal time for Big-O analysis.
+
+> **🔗 各数据结构的详细讲解与代码示例：**
+> - `ArrayList` vs `LinkedList`、`Stack`、`Queue`、`Deque` → **Lecture 10**
+> - `HashSet`、`TreeSet` → **Lecture 11**
+> - `HashMap`、`TreeMap` → **Lecture 12**

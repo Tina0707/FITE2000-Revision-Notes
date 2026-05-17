@@ -52,6 +52,8 @@ void makeNoise(int i, String s) { ... }  // different order = overloaded
 | `protected` | ✅ | ✅ | ✅ | ❌ |
 | `public` | ✅ | ✅ | ✅ | ✅ |
 
+> ⚠️ **PPT 标注 "We will talk about later"：** `package` 和 `subclass` 的概念在此处仅初步介绍 — **详见 Lecture 3（继承）第 6 节**，其中详细说明了不同访问级别在子类中的表现，以及默认包的概念
+
 ### Getters & Setters
 ```java
 private int size;
