@@ -64,6 +64,12 @@ Canine    Pet        ← both extend Animal (different size/eat())
 
 Java's solution to multiple inheritance: **interfaces**.
 
+> ⚠️ **Interface 的特点：** interface 里**没有实例变量和构造器**。只能有：
+> - `abstract` methods（必须被实现类 override）
+> - `default` methods（Java 8+，可直接使用或在实现类中 override）
+> - `static` methods（Java 8+，属于 interface 本身，通过 `InterfaceName.method()` 调用）
+> - `static final` 常量（如 `int MAX_SPEED = 100;`）
+
 ### Interface (pre-Java 8)
 ```java
 public interface Pet {
