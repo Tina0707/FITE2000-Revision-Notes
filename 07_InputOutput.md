@@ -68,7 +68,8 @@ Chain streams are wrapped around connection streams for flexibility.
 - JVM determines class from info stored with serialized object
 - **Constructor does NOT run** during deserialization
 - Instance variables restored from serialized state
-- `transient` and `static` variables get **default values**
+- `transient` variables get **default values** (`null`, `0`, `false`)
+- `static` variables are **not affected** by serialization — they keep their current value in the class
 - Non-serializable superclass: its **no-arg constructor runs**
 
 ```java
