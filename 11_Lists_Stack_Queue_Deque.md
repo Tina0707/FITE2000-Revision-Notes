@@ -10,6 +10,8 @@
 |---|---|---|
 | `get(index)` | **O(1)** | Direct address calculation |
 | `set(index, value)` | **O(1)** | Direct address calculation |
+
+> **Java API 设计习惯：** `set()` 返回**被替换掉的旧元素**（不是新元素）。同样，`add()` 返回 `boolean` 表示是否成功，`remove()` 返回被删的元素。核心思路：**修改操作通常返回"被改动前"或"被改动掉"的东西，让你知道之前的状态是什么。**
 | `add(element)` (end) | **O(1)** | Fill next empty slot |
 | `add(index, element)` (middle) | **O(n)** | Shift elements right |
 | `remove(index)` | **O(n)** | Shift elements left |
